@@ -1,3 +1,3 @@
 import java.io.File
 
-fun sampleFile(fileName: String) = File("output/$fileName.gif")
+fun sampleFile(fileName: String) = File("media/$fileName.gif")

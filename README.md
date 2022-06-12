@@ -23,9 +23,9 @@ fun main() {
 
 Output:
 
-![Time-based sample](https://raw.githubusercontent.com/vitorhugods/Camcorder/main/output/timeCounter.gif)
+![Time-based sample](https://raw.githubusercontent.com/vitorhugods/Camcorder/main/media/timeCounter.gif)
 
 
 See [samples](https://github.com/vitorhugods/Camcorder/tree/main/sample/src/jvmMain/kotlin) for more examples on how to use. For a more complicated example, see [Explosions.kt](https://github.com/vitorhugods/Camcorder/blob/main/sample/src/jvmMain/kotlin/Explosions.kt):
 
-![Explosions sample](https://raw.githubusercontent.com/vitorhugods/Camcorder/main/output/explosions.gif)
+![Explosions sample](https://raw.githubusercontent.com/vitorhugods/Camcorder/main/media/explosions.gif)
