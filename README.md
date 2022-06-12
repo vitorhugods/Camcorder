@@ -5,15 +5,16 @@ You can use both frame count and/or elapsed time to draw the frames.
 
 ## How to use
 
+1. Call `camcorderPreviewApplication` passing `AnimationSpecs`, an output file and a `FrameRenderer` lambda:
+
 ```kotlin
 @ExperimentalUnitApi
 fun main() {
-    camcorderPreviewApplication(AnimationSpecs(256, 35, 1.seconds), sampleFile("timeCounter")) { frame, timeInMillis: Long ->
+    camcorderPreviewApplication(AnimationSpecs(width, heigth, 1.seconds), "timeCounter.gif") { frame, timeInMillis: Long ->
         Box(modifier = Modifier.background(Color.Green).fillMaxSize()) {
             Text(
                 "Time: ${timeInMillis}ms",
-                fontSize = TextUnit(28f, TextUnitType.Sp),
-                color = Color(49, 140, 231),
+                color = bleuDeFrance,
                 modifier = Modifier.align(Alignment.Center)
             )
         }
@@ -21,7 +22,11 @@ fun main() {
 }
 ```
 
-Output:
+2. Run the application, and you can preview the animation:
+
+![Preview](https://raw.githubusercontent.com/vitorhugods/Camcorder/main/media/preview.png)
+
+3. Click on `Render to GIF`, and the file will be saved:
 
 ![Time-based sample](https://raw.githubusercontent.com/vitorhugods/Camcorder/main/media/timeCounter.gif)
 
