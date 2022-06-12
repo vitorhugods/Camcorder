@@ -6,8 +6,7 @@ plugins {
     id("org.jetbrains.compose")
 }
 
-group = "xyz.schwaab.compose"
-version = "1.0-SNAPSHOT"
+group = "xyz.schwaab"
 
 kotlin {
     jvm {
@@ -25,7 +24,6 @@ kotlin {
 
                 implementation("com.squareup:gifencoder:0.10.1")
                 implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.2")
-                implementation("com.squareup.okio:okio:3.1.0")
             }
         }
         val jvmTest by getting

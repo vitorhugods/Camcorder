@@ -16,4 +16,4 @@ pluginManagement {
 rootProject.name = "ComposeCamcorder"
 
 include("sample", "camcorder")
-
+includeBuild("convention-plugins")
