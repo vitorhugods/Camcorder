@@ -18,12 +18,8 @@ kotlin {
     sourceSets {
         val jvmMain by getting {
             dependencies {
-                implementation(project(":camcorder"))
-
                 implementation(compose.desktop.currentOs)
-
-                implementation("com.squareup:gifencoder:0.10.1")
-                implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.2")
+                implementation("xyz.schwaab:camcorder:0.0.1-beta")
             }
         }
         val jvmTest by getting

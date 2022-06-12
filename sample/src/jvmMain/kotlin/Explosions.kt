@@ -15,7 +15,6 @@ import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.TextUnitType
 import xyz.schwaab.camcorder.AnimationSpecs
 import xyz.schwaab.camcorder.camcorderPreviewApplication
-import java.io.File
 import kotlin.math.roundToInt
 import kotlin.random.Random
 import kotlin.time.Duration
