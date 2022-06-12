@@ -5,7 +5,37 @@ You can use both frame count and/or elapsed time to draw the frames.
 
 ## How to use
 
-1. Call `camcorderPreviewApplication` passing `AnimationSpecs`, an output file and a `FrameRenderer` lambda:
+0. Add the dependency to your Compose Desktop project:
+
+```kotlin
+val jvmMain by getting {
+    dependencies {
+        implementation("xyz.schwaab:camcorder:0.0.1-beta")
+    }
+}
+```
+
+It should look similar to this:
+
+```kotlin
+plugins {
+    kotlin("multiplatform")
+    id("org.jetbrains.compose")
+}
+
+kotlin {
+    sourceSets {
+        val jvmMain by getting {
+            dependencies {
+                implementation("xyz.schwaab:camcorder:0.0.1-beta")
+                implementation(compose.desktop.currentOs)
+            }
+        }
+    }
+}
+```
+
+2. Call `camcorderPreviewApplication` passing `AnimationSpecs`, an output file and a `FrameRenderer` lambda:
 
 ```kotlin
 @ExperimentalUnitApi

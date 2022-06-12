@@ -9,12 +9,6 @@ plugins {
 group = "xyz.schwaab"
 
 kotlin {
-    jvm {
-        compilations.all {
-            kotlinOptions.jvmTarget = "11"
-        }
-        withJava()
-    }
     sourceSets {
         val jvmMain by getting {
             dependencies {
@@ -23,6 +17,12 @@ kotlin {
             }
         }
         val jvmTest by getting
+    }
+    jvm {
+        compilations.all {
+            kotlinOptions.jvmTarget = "11"
+        }
+        withJava()
     }
 }
 
