@@ -19,7 +19,7 @@ fun main() {
             Text(
                 "Frame: $frame",
                 fontSize = TextUnit(28f, TextUnitType.Sp),
-                color = Color(49, 140, 231),
+                color = Color.BleuDeFrance,
                 modifier = Modifier.align(Alignment.Center)
             )
         }
