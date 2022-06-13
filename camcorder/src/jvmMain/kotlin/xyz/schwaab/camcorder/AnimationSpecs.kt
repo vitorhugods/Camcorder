@@ -18,7 +18,7 @@ data class AnimationSpecs(
     ): this(
         width,
         height,
-        (totalFrames / fps).seconds,
+        (totalFrames.toDouble() / fps).seconds,
         fps
     )
 

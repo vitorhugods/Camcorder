@@ -2,6 +2,7 @@ package xyz.schwaab.camcorder
 
 import org.junit.Test
 import kotlin.test.assertEquals
+import kotlin.time.Duration.Companion.milliseconds
 import kotlin.time.Duration.Companion.seconds
 
 class AnimationSpecsTest {
@@ -11,6 +12,17 @@ class AnimationSpecsTest {
         val totalFrames = 100
         val fps = 50
         val duration = 2.seconds
+
+        val specs = AnimationSpecs(500, 500, totalFrames, fps)
+
+        assertEquals(duration, specs.duration)
+    }
+
+    @Test
+    fun givenTotalFramesSmallerThanFPS_whenCreatingAnimationSpecs_thenDurationShouldBeCorrect() {
+        val totalFrames = 25
+        val fps = 50
+        val duration = 500.milliseconds
 
         val specs = AnimationSpecs(500, 500, totalFrames, fps)
 
