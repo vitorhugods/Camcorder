@@ -1,19 +1,31 @@
 package map
 
+import java.lang.Float.max
+
 class CountryShape(
     val vertices: List<Vertex>
 ) {
 
-    val extremes: Vertex
-        get() {
-            val points = vertices.flatMap { it.toList() }.distinct()
-            // TODO: Optimize (reduce unnecessary iterations)
-            // TODO: Handle pacific islands
-            //       Shapes that cross from +180 to -180 longitude?
-            val maximums = points.maxOf(Coordinate::lat) coord points.maxOf(Coordinate::lon)
-            val minimums = points.minOf(Coordinate::lat) coord points.minOf(Coordinate::lon)
-            return minimums to maximums
-        }
+    val extremes: Vertex by lazy {
+        val points = vertices.flatMap { it.toList() }.distinct()
+        // TODO: Optimize (reduce unnecessary iterations)
+        // TODO: Handle pacific islands
+        //       Shapes that cross from +180 to -180 longitude?
+        val maximums = points.maxOf(Coordinate::lat) coord points.maxOf(Coordinate::lon)
+        val minimums = points.minOf(Coordinate::lat) coord points.minOf(Coordinate::lon)
+        minimums to maximums
+    }
+
+    fun transposeCoordinateToCanvas(coordinate: Coordinate, canvasMaxSize: Float): Coordinate {
+        val verticalCenter = extremes.second.lat - extremes.first.lat
+        val horizontalCenter = extremes.second.lon - extremes.first.lon
+        val biggest = max(verticalCenter, horizontalCenter)
+        val scale = canvasMaxSize / biggest
+
+        val newLon = (coordinate.lon - extremes.first.lon) * scale
+        val newLat = (coordinate.lat - extremes.first.lon) * scale
+        return newLat coord newLon
+    }
 
     companion object {
         fun sample() = CountryShape(
