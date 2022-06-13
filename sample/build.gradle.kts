@@ -19,7 +19,7 @@ kotlin {
         val jvmMain by getting {
             dependencies {
                 implementation(compose.desktop.currentOs)
-                implementation("xyz.schwaab:camcorder:0.0.1-beta")
+                implementation(project(":camcorder"))
             }
         }
         val jvmTest by getting
